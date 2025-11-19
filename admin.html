@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel - Dusun Sebangkang</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="main-container">
+    <!-- ===== Pengumuman ===== -->
+    <div class="container" id="pengumuman-container">
+      <h2>📢 Tambah Pengumuman</h2>
+      <form id="announcementForm">
+        <label>Judul Pengumuman</label>
+        <input type="text" id="title" placeholder="Masukkan judul..." required>
+        <label>Tanggal</label>
+        <input type="date" id="date" required>
+        <label>Deskripsi</label>
+        <textarea id="desc" placeholder="Masukkan isi pengumuman..." required></textarea>
+        <button type="submit">Kirim Pengumuman</button>
+      </form>
+
+      <h2>📋 Daftar Pengumuman <span id="notifCount">0</span></h2>
+      <div id="adminBoard" class="board"></div>
+    </div>
+
+    <!-- ===== Komentar ===== -->
+    <div class="container" id="komentar-container">
+      <h2>💬 Daftar Komentar Pengunjung</h2>
+      <div class="daftar-komentar-container">
+        <div id="adminKomentarBoard" class="daftar-komentar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Modal Pengumuman ===== -->
+  <div id="editModal" class="modal-overlay">
+    <div class="modal-content">
+      <h3>Edit Pengumuman</h3>
+      <input type="text" id="editTitle" placeholder="Judul baru">
+      <input type="date" id="editDate">
+      <textarea id="editDesc" placeholder="Deskripsi baru"></textarea>
+      <div class="modal-btns">
+        <button class="confirm-btn" id="editConfirmBtn">Simpan</button>
+        <button class="cancel-btn" id="editCancelBtn">Batal</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="deleteModal" class="modal-overlay">
+    <div class="modal-content">
+      <h3>Hapus Pengumuman</h3>
+      <p>Apakah yakin ingin menghapus pengumuman ini?</p>
+      <div class="modal-btns">
+        <button class="confirm-btn" id="deleteConfirmBtn">Hapus</button>
+        <button class="cancel-btn" id="deleteCancelBtn">Batal</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Modal Komentar ===== -->
+  <!-- Modal Reply Komentar -->
+<div id="replyKomentarModal" class="modal-overlay">
+  <div class="modal-content">
+    <h3>Reply Komentar</h3>
+    <textarea id="replyPesan" placeholder="Tulis reply di sini..."></textarea>
+    <div class="modal-btns">
+      <button class="confirm-btn" id="replyKomentarConfirm">Kirim</button>
+      <button class="cancel-btn" id="replyKomentarCancel">Batal</button>
+    </div>
+  </div>
+</div>
+
+
+  <div id="deleteKomentarModal" class="modal-overlay">
+    <div class="modal-content">
+      <h3>Hapus Komentar</h3>
+      <p>Apakah yakin ingin menghapus komentar ini?</p>
+      <div class="modal-btns">
+        <button class="confirm-btn" id="deleteKomentarConfirm">Hapus</button>
+        <button class="cancel-btn" id="deleteKomentarCancel">Batal</button>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- Modal Reply Balasan -->
+<div id="replyNestedModal" class="modal-overlay">
+  <div class="modal-content">
+    <h3>Balas Reply</h3>
+    <textarea id="replyNestedPesan" placeholder="Tulis balasan..."></textarea>
+    <div class="modal-btns">
+      <button class="confirm-btn" id="replyNestedConfirm">Kirim</button>
+      <button class="cancel-btn" id="replyNestedCancel">Batal</button>
+    </div>
+  </div>
+</div>
+
+
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>
